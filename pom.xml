@@ -24,7 +24,7 @@
     <maven.compiler.release>8</maven.compiler.release>
     <!-- renovate: datasource=maven depName=org.apache.maven:maven-core -->
     <maven.version>3.3.9</maven.version>
-</properties>
+  </properties>
 
   <licenses>
     <license>
