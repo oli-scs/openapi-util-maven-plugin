@@ -1,6 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Java version in Maven properties",
+      "fileMatch": ["^pom\\.xml$"],
+      "matchStrings": [
+        "<!--\\s*renovate: datasource=java-version packageName=java\\s*-->\\s*<maven\\.compiler\\.release>(?<currentValue>.*?)</maven\\.compiler\\.release>"
+      ],
+      "datasourceTemplate": "java-version",
+      "packageNameTemplate": "java"
+    },
+    {
+      "customType": "regex", 
+      "description": "Update Maven version in properties",
+      "fileMatch": ["^pom\\.xml$"],
+      "matchStrings": [
+        "<!--\\s*renovate: datasource=maven depName=(?<depName>.*?)\\s*-->\\s*<maven\\.version>(?<currentValue>.*?)</maven\\.version>"
+      ],
+      "datasourceTemplate": "maven"
+    }
   ]
 }
