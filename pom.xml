@@ -20,9 +20,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- renovate: datasource=java-version packageName=java -->
     <maven.compiler.release>8</maven.compiler.release>
+    <!-- renovate: datasource=maven depName=org.apache.maven:maven-core -->
     <maven.version>3.3.9</maven.version>
-  </properties>
+</properties>
 
   <licenses>
     <license>
