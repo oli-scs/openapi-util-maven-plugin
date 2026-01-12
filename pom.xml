@@ -23,7 +23,7 @@
     <!-- renovate: datasource=java-version packageName=java -->
     <maven.compiler.release>8</maven.compiler.release>
     <!-- renovate: datasource=maven depName=org.apache.maven:maven-core -->
-    <maven.version>3.3.9</maven.version>
+    <maven.version>3.9.12</maven.version>
   </properties>
 
   <licenses>
