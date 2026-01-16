@@ -7,19 +7,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update Java LTS major version in Maven compiler release property",
-      "fileMatch": ["^pom\\.xml$"],
-      "matchStrings": [
-        "<!--\\s*renovate: datasource=java-version packageName=java\\s*-->\\s*<maven\\.compiler\\.release>(?<currentValue>\\d+)</maven\\.compiler\\.release>"
-      ],
-      "datasourceTemplate": "java-version",
-      "packageNameTemplate": "java-maven",
-      "extractVersionTemplate": "^(?<version>\\d+)"
-    },
-    {
-      "customType": "regex",
       "description": "Update Java LTS minor version in GitHub Actions workflow",
-      "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
+      "fileMatch": [
+        "\\.github/workflows/.*\\.ya?ml$"
+      ],
       "matchStrings": [
         "#\\s*renovate: datasource=java-version packageName=java\\s*\\n\\s*java-version: ['\"]?(?<currentValue>[\\d\\.]+)['\"]?"
       ],
@@ -28,27 +19,15 @@
       "extractVersionTemplate": "^(?<version>[\\d\\.]+)"
     },
     {
-      "customType": "regex", 
+      "customType": "regex",
       "description": "Update Maven version in properties",
-      "fileMatch": ["^pom\\.xml$"],
+      "fileMatch": [
+        "^pom\\.xml$"
+      ],
       "matchStrings": [
         "<!--\\s*renovate: datasource=maven depName=(?<depName>.*?)\\s*-->\\s*<maven\\.version>(?<currentValue>.*?)</maven\\.version>"
       ],
       "datasourceTemplate": "maven"
-    }
-  ],
-  "packageRules": [
-    {
-      "description": "Restrict Maven Java versions to LTS major versions only",
-      "matchManagers": ["regex"],
-      "matchPackageNames": ["java-maven"],
-      "allowedVersions": "/^(8|11|17|21|25)$/"
-    },
-    {
-      "description": "Restrict GitHub Actions Java versions to LTS minor versions only",
-      "matchManagers": ["regex"],
-      "matchPackageNames": ["java-actions"],
-      "allowedVersions": "/^(8\\.|11\\.|17\\.|21\\.|25\\.)/"
     }
   ]
 }
