@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-java@v5.1.0
       with:
         # renovate: datasource=java-version packageName=java
-        java-version: '17.0.8'
+        java-version: '17.0.17'
         distribution: 'temurin'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
