@@ -29,5 +29,13 @@
       ],
       "datasourceTemplate": "maven"
     }
+  ],
+  "packageRules": [
+    {
+      "description": "Allow only plexus-xml versions below 4.1.0 due to Java 17 requirement in 4.1.0+",
+      "datasources": ["maven"],
+      "packageNames": ["org.codehaus.plexus:plexus-xml"],
+      "allowedVersions": "<4.1.0"
+    }
   ]
 }
