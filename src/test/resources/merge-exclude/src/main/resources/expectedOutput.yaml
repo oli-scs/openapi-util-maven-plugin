@@ -21,7 +21,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
   /stores:
     get:
       tags:
@@ -51,13 +51,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Stores'
+                $ref: "#/components/schemas/Stores"
         default:
           description: unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
     post:
       tags:
       - stores
@@ -71,7 +71,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
   /stores/{storeId}:
     get:
       tags:
@@ -93,13 +93,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Store'
+                $ref: "#/components/schemas/Store"
         default:
           description: unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 components:
   schemas:
     Error:
@@ -129,7 +129,7 @@ components:
     Pets:
       type: array
       items:
-        $ref: '#/components/schemas/Pet'
+        $ref: "#/components/schemas/Pet"
     Store:
       required:
       - id
@@ -146,4 +146,4 @@ components:
     Stores:
       type: array
       items:
-        $ref: '#/components/schemas/Store'
+        $ref: "#/components/schemas/Store"
